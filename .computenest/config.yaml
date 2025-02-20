@@ -56,8 +56,8 @@ Artifact:
     ArtifactBuildProperty:
       CodeRepo:
         Platform: github
-        Owner: JJGGu
-        RepoName: JJGGu/LLaMA-Factory
+        Owner: HankXYang
+        RepoName: HankXYang/LLaMA-Factory
         Branch: main
       RegionId: ap-southeast-1
       CommandType: RunShellScript

@@ -127,8 +127,25 @@ Parameters:
       InstanceChargeType: ${PayType}
       Constraints:
         InstanceTypeFamily:
-          - ecs.u1
-          - ecs.e
+          - ecs.gn7i
+          - ecs.gn7e
+          - ecs.gn7s
+          - ecs.gn7
+          - ecs.gn7r
+          - ecs.gn6i
+          - ecs.gn6e
+          - ecs.gn6v
+          - ecs.vgn6i-vws
+          - ecs.vgn7i-vws
+          - ecs.ebmgn8v
+          - ecs.ebmgn8is
+          - ecs.ebmgn7ex
+          - ecs.ebmgn7e
+          - ecs.ebmgn7ix
+          - ecs.ebmgn7i
+          - ecs.ebmgn7vx
+          - ecs.ebmgn7v
+          - ecs.ebmgn7
   InstancePassword:
     NoEcho: true
     Type: String
@@ -228,12 +245,12 @@ Resources:
           - Ref: EcsVpc
           - Ref: VpcId
       SecurityGroupIngress:
-        - PortRange: 7860/7860
+        - PortRange: 8000/8000
           Priority: 1
           SourceCidrIp: 0.0.0.0/0
           IpProtocol: tcp
           NicType: internet
-        - PortRange: 8000/8000
+        - PortRange: 7860/7860
           Priority: 1
           SourceCidrIp: 0.0.0.0/0
           IpProtocol: tcp
@@ -318,7 +335,7 @@ Outputs:
       zh-cn: llamafactory 访问页面。
     Value:
       Fn::Sub:
-        - http://${ServerAddress}:7860,http://${ServerAddress}:8000
+        - http://${ServerAddress}:8000,http://${ServerAddress}:7860
         - ServerAddress:
             Fn::Select:
               - 0
