@@ -245,12 +245,12 @@ Resources:
           - Ref: EcsVpc
           - Ref: VpcId
       SecurityGroupIngress:
-        - PortRange: 8000/8000
+        - PortRange: 7860/7860
           Priority: 1
           SourceCidrIp: 0.0.0.0/0
           IpProtocol: tcp
           NicType: internet
-        - PortRange: 7860/7860
+        - PortRange: 8000/8000
           Priority: 1
           SourceCidrIp: 0.0.0.0/0
           IpProtocol: tcp
@@ -335,7 +335,7 @@ Outputs:
       zh-cn: llamafactory 访问页面。
     Value:
       Fn::Sub:
-        - http://${ServerAddress}:8000,http://${ServerAddress}:7860
+        - http://${ServerAddress}:7860,http://${ServerAddress}:8000
         - ServerAddress:
             Fn::Select:
               - 0

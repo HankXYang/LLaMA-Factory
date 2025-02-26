@@ -61,7 +61,7 @@ Artifact:
         Branch: main
       RegionId: ap-southeast-1
       CommandType: RunShellScript
-      SourceImageId: m-t4n09mlvy3gsnvwcdtn4
+      SourceImageId: aliyun/services/computenest/images/aliyun_3_2104_docker_26_gpu_cuda_12_4_60g
       CommandContent: |-
         mkdir -p /root/application
         if [ -e "/root/code/." ]; then cp -r "/root/code/." "/root/application/"; fi
